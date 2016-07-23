@@ -56,11 +56,11 @@ Add the package to your application service providers in config/app.php file.
 Publish package migrations and seeders with:
 
 	php artisan vendor:publish
-	
+
 Then run migrations.
 
 	php artisan migrate
-	
+
 If you want **all countries**, run:
 
 	php artisan db:seed --class AllCountriesSeeder
@@ -161,7 +161,7 @@ Check [available countries](#available-countries) below.
 | Uruguay             |
 | Venezuela           |
 
-	
+
 ### Traits and Contracts
 You can use GeoData traits when you need to define a relation to countries, regions and/or cities.
 
@@ -206,10 +206,10 @@ This package comes with `Gerardojbaez\GeoData\Models\Country`,
 Take a look at each model for more details.
 
 ### Controllers
-If you want to provide countries, regions and/or cities data to your frontend you may want to use 
-`Gerardojbaez\GeoData\Controllers\CountriesController`, 
-`Gerardojbaez\GeoData\Controllers\RegionsController` and 
-`Gerardojbaez\GeoData\Controllers\CitiesController` controllers. 
+If you want to provide countries, regions and/or cities data to your frontend you may want to use
+`Gerardojbaez\GeoData\Controllers\CountriesController`,
+`Gerardojbaez\GeoData\Controllers\RegionsController` and
+`Gerardojbaez\GeoData\Controllers\CitiesController` controllers.
 
 Controllers returns a json reponse containing (if any) the requested data.
 

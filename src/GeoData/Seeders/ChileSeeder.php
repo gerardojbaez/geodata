@@ -18,7 +18,7 @@ class ChileSeeder extends Seeder
     {
         Country::create($this->country());
         Region::insert($this->regions());
-        
+
         if ($this->cities() > 4000)
         {
             foreach (array_chunk($this->cities(), 3500) as $chunk)

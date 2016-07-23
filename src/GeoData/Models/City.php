@@ -12,7 +12,7 @@ use Gerardojbaez\GeoData\Traits\Sluggable;
 class City extends Model implements CityContract, HasCountryContract
 {
     use HasCountry, HasRegion, Sluggable;
-    
+
     /**
      * The attributes that are mass assignable.
      *

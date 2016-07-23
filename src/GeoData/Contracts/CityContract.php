@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Gerardojbaez\GeoData\Contracts;
 
