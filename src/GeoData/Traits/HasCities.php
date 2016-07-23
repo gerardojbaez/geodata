@@ -1,6 +1,8 @@
-<?php 
+<?php
 
 namespace Gerardojbaez\GeoData\Traits;
+
+use Gerardojbaez\GeoData\Models\City;
 
 trait HasCities
 {
