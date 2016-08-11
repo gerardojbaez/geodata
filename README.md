@@ -10,6 +10,7 @@ GeoData is a Laravel package that provides basic geographical data like Countrie
 	- [Traits and Contracts](#traits-and-contracts)
 	- [Available Countries](#available-countries)
 - [Usage](#usage)
+    - [Installing Countries](#installing-countries)
 	- [Models](#models)
 	- [Controllers](#controllers)
 	- [Routes](#routes)
@@ -195,6 +196,39 @@ class User extends Model implements HasCountryContract, HasRegionContract, HasCi
         'city_id',
         ...
     ];
+```
+
+## Usage
+
+### Installing Countries
+
+In addition to install countries via command line using seeders, you can also
+install countries through the `CountryInstaller` class. This will help you create a "web interface" that will give your customers or users the ability to install countries as needed. The installer will check if the country has been already installed and in that case will throw `Gerardojbaez\Geodata\Exceptions\CountryAlreadyInstalledException`.
+
+The installation include:
+
+- The country
+- Country Regions
+- Country Cities
+
+It's as simple as:
+
+```php
+<?php
+
+use Gerardojbaez\Geodata\CountryInstaller;
+
+// Install United States.
+$installer = new CountryInstaller('United States');
+$installer->install();
+
+// Install Puerto Rico.
+$installer = new CountryInstaller('Puerto Rico');
+$installer->install();
+
+// Install Spain
+$installer = new CountryInstaller('Spain');
+$installer->install();
 ```
 
 ### Models

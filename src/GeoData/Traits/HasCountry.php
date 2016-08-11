@@ -1,6 +1,8 @@
-<?php 
+<?php
 
 namespace Gerardojbaez\GeoData\Traits;
+
+use Gerardojbaez\GeoData\Models\Country;
 
 trait HasCountry
 {
@@ -11,7 +13,11 @@ trait HasCountry
 	 */
 	public function country()
 	{
-		return $this->belongsTo(Country::class);
+		return $this->belongsTo(
+			Country::class,
+			(property_exists($this, 'countryForeignKey') ? $this->countryForeignKey : 'country_code'),
+			(property_exists($this, 'countryOtherKey') ? $this->countryOtherKey : 'code')
+		);
 	}
 
 	/**

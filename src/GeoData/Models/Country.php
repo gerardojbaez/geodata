@@ -42,4 +42,24 @@ class Country extends Model implements CountryContract, HasRegionsContract, HasC
     {
         return $query->where('code', $code);
     }
+
+    /**
+     * Get regions.
+     *
+     * @return mixed
+     */
+    public function regions()
+    {
+        return $this->hasMany(Region::class, 'country_code', 'code');
+    }
+
+    /**
+     * Get cities.
+     *
+     * @return mixed
+     */
+    public function cities()
+    {
+        return $this->hasMany(City::class, 'country_code', 'code');
+    }
 }
