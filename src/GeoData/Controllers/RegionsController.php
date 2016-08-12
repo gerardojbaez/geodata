@@ -17,15 +17,21 @@ class RegionsController extends Controller
      */
     public function regions($country_code)
     {
-    	$regions = Region::orderBy('name', 'ASC')->byCountryCode($country_code)->get([
-    		'id',
-    		'country_code',
-    		'name',
-    		'slug'
-    	]);
+        $regions = Region::active()
+            ->orderBy('name', 'ASC')
+            ->whereHas('country', function($query) {
+                $query->active();
+            })
+            ->where('country_code', $country_code)
+            ->get([
+                'id',
+                'country_code',
+                'name',
+                'slug'
+            ]);
 
-    	return response()->json([
-    		'regions' => $regions
-    	]);
+        return response()->json([
+            'regions' => $regions
+        ]);
     }
 }
