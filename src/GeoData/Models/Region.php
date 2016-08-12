@@ -9,10 +9,11 @@ use Gerardojbaez\GeoData\Contracts\HasCitiesContract;
 use Gerardojbaez\GeoData\Traits\HasCountry;
 use Gerardojbaez\GeoData\Traits\HasCities;
 use Gerardojbaez\GeoData\Traits\Sluggable;
+use Gerardojbaez\GeoData\Traits\Activable;
 
 class Region extends Model implements RegionContract, HasCountryContract, HasCitiesContract
 {
-    use HasCountry, HasCities, Sluggable;
+    use HasCountry, HasCities, Sluggable, Activable;
 
     /**
      * The attributes that are mass assignable.
