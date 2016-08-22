@@ -1,6 +1,6 @@
 <?php
 
-namespace Gerardojbaez\Geodata\Exceptions;
+namespace Gerardojbaez\GeoData\Exceptions;
 
 class CountryNotAvailableException extends \Exception
 {

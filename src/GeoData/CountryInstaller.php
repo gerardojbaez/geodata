@@ -1,14 +1,14 @@
 <?php
 
-namespace Gerardojbaez\Geodata;
+namespace Gerardojbaez\GeoData;
 
 use DB;
 use Artisan;
-use Gerardojbaez\Geodata\Models\City;
-use Gerardojbaez\Geodata\Models\Region;
-use Gerardojbaez\Geodata\Models\Country;
-use Gerardojbaez\Geodata\Exceptions\CountryNotAvailableException;
-use Gerardojbaez\Geodata\Exceptions\CountryAlreadyInstalledException;
+use Gerardojbaez\GeoData\Models\City;
+use Gerardojbaez\GeoData\Models\Region;
+use Gerardojbaez\GeoData\Models\Country;
+use Gerardojbaez\GeoData\Exceptions\CountryNotAvailableException;
+use Gerardojbaez\GeoData\Exceptions\CountryAlreadyInstalledException;
 
 class CountryInstaller
 {
@@ -33,7 +33,7 @@ class CountryInstaller
      * Create new CountryInstaller instance.
      *
      * @param  string Country name
-     * @throws Gerardojbaez\Geodata\Exceptions\CountryNotAvailableException
+     * @throws Gerardojbaez\GeoData\Exceptions\CountryNotAvailableException
      * @return void
      */
     public function __construct($country)
@@ -61,7 +61,7 @@ class CountryInstaller
     /**
      * Install country.
      *
-     * @throws Gerardojbaez\Geodata\Exceptions\CountryAlreadyInstalledException
+     * @throws Gerardojbaez\GeoData\Exceptions\CountryAlreadyInstalledException
      * @return void
      */
     public function install()
@@ -74,7 +74,7 @@ class CountryInstaller
         DB::transaction(function() use ($country)
         {
             Artisan::call('db:seed', [
-                '--class' => 'Gerardojbaez\Geodata\Seeders\\'.$this->getSeederName($country)
+                '--class' => 'Gerardojbaez\GeoData\Seeders\\'.$this->getSeederName($country)
             ]);
         });
     }
@@ -159,7 +159,7 @@ class CountryInstaller
      */
     protected static function loadSeeder($country)
     {
-        $seeder = 'Gerardojbaez\Geodata\Seeders\\'.self::getSeederName($country);
+        $seeder = 'Gerardojbaez\GeoData\Seeders\\'.self::getSeederName($country);
         return new $seeder();
     }
 }
