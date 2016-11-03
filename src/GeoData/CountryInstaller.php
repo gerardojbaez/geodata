@@ -74,7 +74,8 @@ class CountryInstaller
         DB::transaction(function() use ($country)
         {
             Artisan::call('db:seed', [
-                '--class' => 'Gerardojbaez\GeoData\Seeders\\'.$this->getSeederName($country)
+                '--class' => 'Gerardojbaez\GeoData\Seeders\\'.$this->getSeederName($country),
+                '--force' => true,
             ]);
         });
     }
