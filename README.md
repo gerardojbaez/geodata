@@ -108,6 +108,7 @@ Check [available countries](#available-countries) below.
 | Ecuador             |
 | El Salvador         |
 | Equatorial Guinea   |
+| Estonia             |
 | Finland             |
 | France              |
 | Germany             |
