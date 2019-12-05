@@ -1,6 +1,6 @@
 {
     "name": "gerardojbaez/geodata",
-    "description": "Laravel 5.2 package that provides basic geographical data like Countries, Regions and Cities.",
+    "description": "Laravel 6 package that provides basic geographical data like Countries, Regions and Cities.",
     "keywords": ["geographical data", "countries", "regions", "cities", "laravel"],
     "license": "MIT",
     "authors": [
@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.9",
-        "illuminate/support": "~5.0"
+        "illuminate/support": "~5.0|~6.0"
     },
     "autoload": {
         "psr-4": {
